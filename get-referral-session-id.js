@@ -1,5 +1,5 @@
 const graphQLEndpoint = "https://api.groundfloor.us/graphql_api/v1";
-const apiConsumerToken = "Token token=API_CONSUMER_TOKEN";
+const apiConsumerToken = "Token token=sk_vzQeHm4OVrvYqkRjzDPBoCDv";
 
 const apiConsumerQuery = `mutation IssueApiConsumerJwt {
     issueApiConsumerJwt(input: {}) {
