@@ -1,5 +1,6 @@
-const graphQLEndpoint = 'https://api.groundfloor.us/graphql_api/v1';
-const apiConsumerToken = 'Token token=sk_vzQeHm4OVrvYqkRjzDPBoCDv';
+// These need to be updated depending on Environment
+const graphQLEndpoint = "https://api.groundfloor.us/graphql_api/v1";
+const apiConsumerToken = "Token token=sk_vzQeHm4OVrvYqkRjzDPBoCDv";
 
 const apiConsumerQuery = `mutation IssueApiConsumerJwt {
   issueApiConsumerJwt(input: {}) {
