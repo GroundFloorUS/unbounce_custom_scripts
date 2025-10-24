@@ -25,7 +25,9 @@ const referralSessionQuery = `mutation EstablishReferralSession($input: Establis
 }`;
 
 let queryString = window.location.search;
-let parsedString = queryString.split('=')[1];
+// example url "https://join.groundfloor.com/referral-test-pr/?code=m7ff29&af_xp=referral&pid=User_invite&use_deep_link=m7ff29"
+let parsedString = queryString.split('code=')[1].split('&')[0];
+console.log("parsed code", parsedString);
 const variables = {
   input: {
     code: parsedString,
