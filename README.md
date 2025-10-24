@@ -4,8 +4,11 @@ Unbounce requires snippets of plain javascript (wrapped in a `<script>`) to pass
 
 These snippets are called from Unbounce via `src` property of script tag.
 
-NOTE: impact-click-id embedded script is working as expected.  get-referral-session-id is not working, and unbounce is hosting the full script
-there is a test page called Josh Referral Test where we're trying to get it working.
+`join.groundfloor.com` needs to be added to `CORS_ALLOWLIST` for referral script to work on respective envs.
+
+to test or modify in a PR env, input field in "Josh Referral Test PR" needs to be updated with env info via Unbounce.
+
+"Josh Referral Test Staging" should automatically point to `staging` env.
 
 ## example
 
