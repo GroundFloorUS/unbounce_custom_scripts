@@ -57,6 +57,7 @@ fetch(graphQLEndpoint, {
   })
   .then((res) => res.json())
   .then((result) => { 
+    console.log("result", result);
     const sessionId = result.data.establishReferralSession.referralSessionId
     console.log("sessionId", sessionId);
     document.getElementById('referral_session_id').value = sessionId;
