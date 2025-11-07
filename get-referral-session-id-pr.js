@@ -1,7 +1,7 @@
 // These need to be updated depending on Environment
 // ideally these variants would consume the main script and only change the first two variables
-const graphQLEndpoint = "https://api.sc-1033.gandalf-struts.com/graphql_api/v1";
-const apiConsumerToken = "Token token=sc-1033-secret";
+const graphQLEndpoint = "https://api.sc-1038.gandalf-struts.com/graphql_api/v1";
+const apiConsumerToken = "Token token=sc-1038-secret";
 
 const apiConsumerQuery = `mutation IssueApiConsumerJwt {
   issueApiConsumerJwt(input: {}) {
