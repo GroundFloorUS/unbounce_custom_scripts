@@ -4,6 +4,7 @@ const apiConsumerQuery = `mutation IssueApiConsumerJwt {
           jwt
           tokenType
       }
+
       errors {
           status
           detail
@@ -16,6 +17,12 @@ const referralSessionQuery = `mutation EstablishReferralSession($input: Establis
   establishReferralSession(input: $input)  {
     referralSessionId
     referrerName
+
+    errors {
+        status
+        detail
+        code
+    }
   }
 }`;
 
