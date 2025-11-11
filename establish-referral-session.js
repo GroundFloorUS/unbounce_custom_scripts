@@ -33,7 +33,7 @@ function handleReferralSessionError(errorCode = null) {
   // safe and accommodating any possible error code that is not a generic server error.
   switch (errorCode) {
     case "RESOURCE_NOT_FOUND":
-      errorMessage = "The referral code you entered is invalid. Please check and try again.";
+      errorMessage = "This referral code is invalid. Please ask for a new link or contact support.";
       break;
     case "UNAUTHORIZED_CLIENT":
       errorMessage = "Your session has expired. Please refresh the page and try again.";
@@ -45,7 +45,7 @@ function handleReferralSessionError(errorCode = null) {
       errorMessage = "You cannot use your own referral code. Please use a different code.";
       break;
     case "USER_REGISTRATION_DATE_PAST_REFERRAL_WINDOW":
-      errorMessage = "The referral code you entered has expired. Please contact support for assistance.";
+      errorMessage = "This referral code has expired. Please contact support for assistance.";
       break;
     case "REFERRING_USER_NOT_FOUND":
       errorMessage = "The user associated with this referral code could not be found. Please check the code and try again.";
@@ -120,6 +120,8 @@ export function establishReferralSession(graphQLEndpoint, apiConsumerToken) {
       };
 
       const sessionId = result.data.establishReferralSession.referralSessionId
+
+      console.log("Referral Session ID:", sessionId);
 
       document.getElementById('referral_session_id').value = sessionId;
     });
