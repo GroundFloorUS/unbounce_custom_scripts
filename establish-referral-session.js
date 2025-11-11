@@ -84,9 +84,11 @@ export function establishReferralSession(graphQLEndpoint, apiConsumerToken) {
           Authorization: apiConsumerToken,
         },
   })
-  .then((res) => res.json())
   .catch(() => handleReferralSessionError())
+  .then((res) => res.json())
   .then((result) => {
+    if (!result || !result.data) return;
+
     const error = result.data.issueApiConsumerJwt.errors[0];
 
     if (error) {
@@ -105,9 +107,11 @@ export function establishReferralSession(graphQLEndpoint, apiConsumerToken) {
         Authorization: `Bearer ${token}`,
       },
     })
-    .then((res) => res.json())
     .catch(() => handleReferralSessionError())
+    .then((res) => res.json())
     .then((result) => { 
+      if (!result || !result.data) return;
+
       const error = result.data.establishReferralSession.errors[0];
 
       if (error) {
